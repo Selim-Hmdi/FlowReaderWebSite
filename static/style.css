@@ -1,0 +1,38 @@
+#main-title
+{
+    text-align: center;
+}
+
+#nav-bar
+{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    background-color: #3f3f3f81;
+    padding: 10px;
+}
+
+#nav-bar a:link 
+{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#nav-bar a:hover
+{
+    background-color: #2b2a2a;
+    padding: 10px;
+}
+
+
+#the-footer
+{
+    display: flex;
+    justify-content: center;
+    background-color: #3f3f3f81;
+}
+
+#wrapper-header
+{
+    display: flex;
+}
