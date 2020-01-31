@@ -1,4 +1,21 @@
 {% extends "base.html" %}
-{% block main %}
 
+{% block navbar %}
+    {% if current_user.is_authenticated %}
+    <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+    </ul>
+    {% else %}
+    <ul>
+        <li> <a href="{{ url_for('home') }}">Home</a> </li>
+        <li> <a href="{{ url_for('login') }}">Sign in</a> </li>
+        <li> <a href="{{ url_for('register') }}">Register</a> </li>
+    </ul>
+    {% endif %}
+{% endblock %}
+
+{% block main %}
+<p>Bienvenue sur notre site de lecteur de flux web. {{ current_user.username }}</p>
+<p>Nous vous invitons à vous inscrire ou vous enregistrer</p>
+<p>Ainsi vous pourrez visionner l'ensemble de vos flux dans votre page d'accueil</p>
 {% endblock %}

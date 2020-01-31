@@ -1,29 +1,33 @@
 #main-title
 {
-    text-align: center;
+    font-family: 'Vast Shadow', cursive;
+    color: #ffffff;
+    margin-left: 5px;
 }
 
-#nav-bar
+#nav-bar ul li
 {
-    display: flex;
-    justify-content: space-between;
+    display: inline-block;
     list-style: none;
-    background-color: #3f3f3f81;
-    padding: 10px;
+    margin-right: 15px;
+
 }
 
-#nav-bar a:link 
+#nav-bar ul a:link 
 {
     text-decoration: none;
+}
+
+#nav-bar ul a
+{
     color: #ffffff;
+    font-weight: bold;
 }
 
 #nav-bar a:hover
 {
-    background-color: #2b2a2a;
-    padding: 10px;
+    color: #4a94d9;
 }
-
 
 #the-footer
 {
@@ -32,7 +36,28 @@
     background-color: #3f3f3f81;
 }
 
-#wrapper-header
+header
 {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(29,29,29, 100);
 }
+
+.form
+{
+    margin: 0 auto;
+    width: 80%;
+}
+
+.form input, label
+{
+    display: inline-block;
+}
+
+.form label
+{
+    text-align: center;
+    
+}
+

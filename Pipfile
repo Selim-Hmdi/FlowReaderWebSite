@@ -4,6 +4,8 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+pylint = "*"
+autopep8 = "*"
 
 [packages]
 flask = "*"
@@ -11,6 +13,9 @@ flask-login = "*"
 feedparser = "*"
 pytest = "*"
 peewee = "*"
+wtforms = "*"
+wtf-peewee = "*"
+flask-wtf = "*"
 
 [requires]
 python_version = "3.8"

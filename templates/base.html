@@ -3,25 +3,22 @@
     <head>
         <meta charset="UTF-8">
         <title>Lecteur de flux</title>
-        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css')  }}">
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">        
+        <link href="https://fonts.googleapis.com/css?family=Vast+Shadow&display=swap" rel="stylesheet"> 
     </head>
     <body>
         <header>
-            <div id="wrapper-header">   
-                <img src="https://cdn.wpformation.com/wp-content/uploads/2012/11/flux_rss.jpg" alt="image flux RSS">
-                <h1 id="main-title">Lecteur de flux web</h1>
-            </div>
-            <ul id="nav-bar">
-                <a href="{{ url_for('homePage') }}"><li>Home</li></a>
-                <a href="{{ url_for('homePage') }}"><li>Sign in</li></a>
-                <a href="{{ url_for('homePage') }}"><li>Register</li></a>
-            </ul>
+            <h1 id="main-title">Lecteur de flux web</h1>  
+            <nav id="nav-bar">
+                {% block navbar%}{% endblock %}
+            </nav>
         </header>
-
-        <main>{% block main %}{% endblock %}</main>
-
+        <main>
+            {% block main %}{% endblock %}
+        </main>
         <footer id="the-footer">
-                <p>Copyright 2020</p>
+                <p>Copyright 2020 Lecteur de flux web</p>
         </footer>
     </body>
 </html>
