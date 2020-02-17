@@ -16,7 +16,7 @@ def client():
 
 
 def test_index(client):
-    rv = client.get('/homepage')
+    rv = client.get('/')
     assert rv.status_code == 200
 
 def test_register(client):
@@ -27,11 +27,6 @@ def test_login(client):
     rv = client.get('/login')
     assert rv.status_code == 200
 
-def test_userPage(client):
-    rv = client.get(url_for('/user', username='Toto'))
-    assert rv.status_code == 200
-    assert b'Toto' in rv.data
-
-def test_listUser(client):
-    rv = client.get('/list')
-    assert rv.status_code == 200
+def test_flow(client):
+    rv = client.get('/flow')
+    assert rv.status_code == 302

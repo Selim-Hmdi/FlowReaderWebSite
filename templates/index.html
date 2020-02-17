@@ -4,6 +4,8 @@
     {% if current_user.is_authenticated %}
     <ul>
         <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('flow') }}">Flow list</a></li>
+        <li><a href="{{ url_for('logout') }}">Logout</a></li>
     </ul>
     {% else %}
     <ul>
@@ -15,7 +17,30 @@
 {% endblock %}
 
 {% block main %}
-<p>Bienvenue sur notre site de lecteur de flux web. {{ current_user.username }}</p>
-<p>Nous vous invitons à vous inscrire ou vous enregistrer</p>
-<p>Ainsi vous pourrez visionner l'ensemble de vos flux dans votre page d'accueil</p>
+
+    {% if current_user.is_authenticated %}
+        <p>Welcolme {{ current_user.username }}</p>
+        <p>Here you can see your RSS/atom flow</p>
+        <hr>
+        <section>
+            {% for key,value in feedRSS.items() %}
+                <article>
+                    <h2 class="title-feed">{{ value.feed.title }}</h2>    
+                </article>
+            {% endfor %}
+
+            {% for key,value in feedAtom.items() %}
+                <article>
+                    <h2 class="title-feed">{{ value.feed.title }}</h2>
+                </article>
+            {% endfor %}
+        </section>
+
+
+    {% else %}
+        <p>Welcome to our flow reader website.</p>
+        <p>We advice you to either register or login.</p>
+        <p>Hence you'll be able to see all your flow</p>
+    {% endif %}
+
 {% endblock %}

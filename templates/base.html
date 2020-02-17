@@ -2,14 +2,14 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Lecteur de flux</title>
+        <title>Flow reader</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css')  }}">
         <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">        
         <link href="https://fonts.googleapis.com/css?family=Vast+Shadow&display=swap" rel="stylesheet"> 
     </head>
     <body>
         <header>
-            <h1 id="main-title">Lecteur de flux web</h1>  
+            <h1 id="main-title"><a href="{{ url_for('login') }}">Flow reader website</a></h1>  
             <nav id="nav-bar">
                 {% block navbar%}{% endblock %}
             </nav>
@@ -18,7 +18,7 @@
             {% block main %}{% endblock %}
         </main>
         <footer id="the-footer">
-                <p>Copyright 2020 Lecteur de flux web</p>
+                <p>Copyright 2020 Flow reader website</p>
         </footer>
     </body>
 </html>

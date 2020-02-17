@@ -15,3 +15,7 @@ class RegisterForm(FlaskForm):
     password = PasswordField("Password", validators=[DataRequired(), 
                             EqualTo('confirmPassword', message="Les deux mot de passe doivent correspondre")])
     confirmPassword = PasswordField("Confirm password")
+
+
+class URLForm(FlaskForm):
+    url = StringField("Url du flux", validators=[DataRequired()])
