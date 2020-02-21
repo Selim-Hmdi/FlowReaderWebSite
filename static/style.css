@@ -46,6 +46,7 @@
     display: flex;
     justify-content: center;
     background-color: #3f3f3f81;
+    padding: 40px;
 }
 
 header
@@ -90,6 +91,7 @@ header
     margin-bottom: 1em;
     margin-left: 5px;
     font-size: 30px;
+    color : #9b5606
 }
 
 .article-feed
