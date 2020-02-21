@@ -87,4 +87,22 @@ header
 {
     clear: left;
     margin-bottom: 1em;
+    margin-left: 5px;
+    font-size: 30px;
+}
+
+.article-feed
+{
+    display: flex;
+    flex-direction: column;
+}
+
+article:nth-child(even)
+{
+     background-color: #b9b7b7;
+}
+
+article:nth-child(odd)
+{
+     background-color: #dfd9d9;
 }

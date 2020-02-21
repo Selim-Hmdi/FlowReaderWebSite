@@ -84,7 +84,6 @@ def flow():
             user = user_id
         )
         flow.save()
-        print ('User id : {0}\nUrl : {1}\nid du flow {2}'.format(flow.user,flow.url,flow.id))
     return render_template("flow.html", form=form)
 
 

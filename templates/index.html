@@ -17,22 +17,30 @@
 {% endblock %}
 
 {% block main %}
-
     {% if current_user.is_authenticated %}
         <p>Welcolme {{ current_user.username }}</p>
         <p>Here you can see your RSS/atom flow</p>
         <hr>
         <section>
-            {% for key,value in feedRSS.items() %}
-                <article>
-                    <h2 class="title-feed">{{ value.feed.title }}</h2>    
-                </article>
+            {% for key,feed in feedRSS.items() %}
+                    <h2 class="title-feed">{{ feed.feed.title }}</h2>
+                        {% for entry in feed.entries %}
+                            <article class="article-feed">   
+                                <h3>{{ entry.title }}</h3>    
+                                <p>{{ entry.description|safe }}</p> 
+                                <div class="published">{{ entry.published }}</div>     
+                            </article>
+                        {% endfor %}
             {% endfor %}
 
-            {% for key,value in feedAtom.items() %}
-                <article>
-                    <h2 class="title-feed">{{ value.feed.title }}</h2>
-                </article>
+            {% for key,feed in feedAtom.items() %}   
+                    <h2 class="title-feed">{{ feed.feed.title }}</h2>
+                        {% for entry in feed.entries %}
+                            <article class="article-feed">
+                                <h3>{{ entry.title }}</h3> 
+                                <p>{{ entry.description|safe }}</p> 
+                                <div class="published">{{ entry.published }}</div>                            </article>
+                        {% endfor %}
             {% endfor %}
         </section>
 
@@ -42,5 +50,4 @@
         <p>We advice you to either register or login.</p>
         <p>Hence you'll be able to see all your flow</p>
     {% endif %}
-
 {% endblock %}
